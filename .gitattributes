@@ -19,3 +19,4 @@ TGSDK/frameworks/SQMobileAdsSDK.framework/SQMobileAdsSDK filter=lfs diff=lfs mer
 TGSDK/frameworks/MTGSDKReward.framework/MTGSDKReward filter=lfs diff=lfs merge=lfs -text
 TGSDK/frameworks/MTGSDKInterstitialVideo.framework/MTGSDKInterstitialVideo filter=lfs diff=lfs merge=lfs -text
 TGSDK/frameworks/AdColony.framework/AdColony filter=lfs diff=lfs merge=lfs -text
+TGSDK/frameworks/yomobads.framework/yomobads filter=lfs diff=lfs merge=lfs -text
