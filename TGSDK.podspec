@@ -24,7 +24,7 @@ Yomob Ad SDK.
   s.homepage         = 'https://yomob.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yomob' => 'support@yomob.com' }
-  s.source           = { :git => 'https://github.com/soulgame/CocoaPods-TGSDK.git', :tag => s.version }
+  s.source           = { :git => 'https://github.com/yomob-tgsdk/CocoaPods-TGSDK.git', :tag => s.version }
   # s.source           = { :git => 'git@git.coding.net:yomob-ad-sdk/cocopodsTGSDK.git', :tag => s.version }
 
   s.ios.deployment_target = '8.0'
