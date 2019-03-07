@@ -20,6 +20,16 @@ FOUNDATION_EXPORT NSString * _Nonnull yomobadsVersion;
 - (void)rewardDidClosed;
 @end
 
+@protocol yomobadsVideoDelegate <NSObject>
+@optional
+- (void)videoDidLoad;
+- (void)videoLoadFailed:(NSString *)error;
+- (void)videoDidShow;
+- (void)videoShowFailed:(NSString *)error;
+- (void)videoDidClick;
+- (void)videoDidClosed;
+@end
+
 @protocol yomobadsInterstitialDelegate <NSObject>
 @optional
 - (void)interstitialDidLoad;
@@ -41,6 +51,11 @@ FOUNDATION_EXPORT NSString * _Nonnull yomobadsVersion;
 + (yomobads *)initialize:(NSString *)appId userId:(NSString *)tgId;
 + (yomobads *)sharedInstance;
 + (void)setDebugModel:(BOOL)debug;
+
+//Video广告
+- (void)preloadVideoWithDelegate:(NSObject<yomobadsRewardDelegate> * _Nullable)delegate;
+- (BOOL)couldShowVideo;
+- (void)showVideo:(UIViewController *)currentVC;
 
 //Reward广告
 - (void)preloadRewardWithDelegate:(NSObject<yomobadsRewardDelegate> * _Nullable)delegate;
