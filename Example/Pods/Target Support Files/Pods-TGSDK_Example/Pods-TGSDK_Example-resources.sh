@@ -100,23 +100,19 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TGStartedIcon.png"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TGUnstartedIcon.png"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/baidumobadsdk.bundle"
-  install_resource "${PODS_ROOT}/../../TGSDK/Assets/CLRTBBundle.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/SQMobileAdsSDK.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TapjoyResources.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TGADSDK.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/WMAdSDK.bundle"
-  install_resource "${PODS_ROOT}/../../TGSDK/Assets/ZplayMuteListener.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TGStartedIcon.png"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TGUnstartedIcon.png"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/baidumobadsdk.bundle"
-  install_resource "${PODS_ROOT}/../../TGSDK/Assets/CLRTBBundle.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/SQMobileAdsSDK.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TapjoyResources.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/TGADSDK.bundle"
   install_resource "${PODS_ROOT}/../../TGSDK/Assets/WMAdSDK.bundle"
-  install_resource "${PODS_ROOT}/../../TGSDK/Assets/ZplayMuteListener.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

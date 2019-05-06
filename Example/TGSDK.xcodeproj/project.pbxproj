@@ -331,24 +331,20 @@
 				"${PODS_ROOT}/../../TGSDK/Assets/TGStartedIcon.png",
 				"${PODS_ROOT}/../../TGSDK/Assets/TGUnstartedIcon.png",
 				"${PODS_ROOT}/../../TGSDK/Assets/baidumobadsdk.bundle",
-				"${PODS_ROOT}/../../TGSDK/Assets/CLRTBBundle.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/SQMobileAdsSDK.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/TapjoyResources.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/TGADSDK.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/WMAdSDK.bundle",
-				"${PODS_ROOT}/../../TGSDK/Assets/ZplayMuteListener.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TGStartedIcon.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TGUnstartedIcon.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/baidumobadsdk.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CLRTBBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SQMobileAdsSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TapjoyResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TGADSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WMAdSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZplayMuteListener.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

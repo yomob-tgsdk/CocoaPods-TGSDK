@@ -58,10 +58,6 @@ typedef enum {
 
 - (void) onPreloadFailed:(NSString* _Nullable)result WithError:(NSError* _Nullable) error;
 
-- (void) onCPADLoaded:(NSString* _Nonnull) result __attribute__((deprecated));
-
-- (void) onVideoADLoaded:(NSString* _Nonnull) result __attribute__((deprecated));
-
 - (void) onAwardVideoLoaded:(NSString* _Nonnull) result;
 
 - (void) onInterstitialLoaded:(NSString* _Nonnull) result;
@@ -72,15 +68,6 @@ typedef enum {
 
 @protocol TGADDelegate <NSObject>
 @optional
-- (void) onShowSuccess:(NSString* _Nonnull)result __attribute__((deprecated));
-
-- (void) onShowFailed:(NSString* _Nonnull)result WithError:(NSError* _Nullable)error __attribute__((deprecated));
-
-- (void) onADComplete:(NSString* _Nonnull)result __attribute__((deprecated));
-
-- (void) onADClick:(NSString* _Nonnull)result __attribute__((deprecated));
-
-- (void) onADClose:(NSString* _Nonnull)result __attribute__((deprecated));
 
 - (void) onShow:(NSString* _Nonnull)scene Success:(NSString* _Nonnull)result;
 
@@ -89,14 +76,6 @@ typedef enum {
 - (void) onAD:(NSString* _Nonnull)scene Click:(NSString* _Nonnull)result;
 
 - (void) onAD:(NSString* _Nonnull)scene Close:(NSString* _Nonnull)result Award:(BOOL)award;
-
-@end
-
-@protocol TGRewardVideoADDelegate <TGADDelegate>
-@optional
-- (void) onADAwardSuccess:(NSString* _Nonnull)result __attribute__((deprecated));
-
-- (void) onADAwardFailed:(NSString* _Nonnull)result WithError:(NSError* _Nullable)error __attribute__((deprecated));
 
 @end
 
@@ -154,7 +133,6 @@ typedef enum {
 
 /*当开始给用户显示广告的时候调用，返回值如果是NSString，则是预加载没有完成或者没有调用预加载，如果返回值是NSData，则是图片的数据。同时发送counter cp_adview*/
 +(void)setADDelegate:(id<TGADDelegate> _Nullable)delegate;
-+(void)setRewardVideoADDelegate:(id<TGRewardVideoADDelegate> _Nullable)delegate;
 +(void)showAd: (NSString* _Nonnull)scene;
 +(void)show:(NSString* _Nonnull) scene Ad:(NSString* _Nullable) sdk;
 +(void)show:(NSString* _Nonnull) scene WithViewController:(UIViewController* _Nullable) view;

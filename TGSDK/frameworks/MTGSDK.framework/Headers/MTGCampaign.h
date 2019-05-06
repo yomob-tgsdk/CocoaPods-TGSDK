@@ -103,6 +103,9 @@ typedef NS_ENUM(NSInteger, MTGAdTemplateType) {
  */
 @property (nonatomic,assign) MTGAdTemplateType    dataTemplate;
 
+/* The size info about adChoice icon */
+@property (nonatomic) CGSize adChoiceIconSize;
+
 /*!
  @method
  
