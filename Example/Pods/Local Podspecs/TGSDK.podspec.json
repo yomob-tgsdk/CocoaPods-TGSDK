@@ -1,6 +1,6 @@
 {
   "name": "TGSDK",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "summary": "Yomob Ad SDK",
   "description": "Yomob Ad SDK.",
   "homepage": "https://yomob.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/yomob-tgsdk/CocoaPods-TGSDK.git",
-    "tag": "1.8.4"
+    "tag": "1.8.5"
   },
   "platforms": {
     "ios": "8.0"
@@ -27,7 +27,8 @@
     "stdc++",
     "sqlite3",
     "xml2",
-    "z"
+    "z",
+    "resolv.9"
   ],
   "vendored_libraries": "TGSDK/libTGSDK.a",
   "frameworks": [
@@ -60,11 +61,13 @@
     "WatchConnectivity",
     "WebKit",
     "JavaScriptCore",
-    "UIKit"
+    "UIKit",
+    "VideoToolbox"
   ],
   "vendored_frameworks": [
     "TGSDK/frameworks/AdColony.framework",
     "TGSDK/frameworks/AppLovinSDK.framework",
+    "TGSDK/frameworks/BUAdSDK.framework",
     "TGSDK/frameworks/BaiduMobAdSDK.framework",
     "TGSDK/frameworks/CHAMoatMobileAppKit.framework",
     "TGSDK/frameworks/Chartboost.framework",
@@ -82,7 +85,6 @@
     "TGSDK/frameworks/Tapjoy.framework",
     "TGSDK/frameworks/UnityAds.framework",
     "TGSDK/frameworks/VungleSDK.framework",
-    "TGSDK/frameworks/WMAdSDK.framework",
     "TGSDK/frameworks/WindSDK.framework"
   ]
 }

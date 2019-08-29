@@ -9,9 +9,8 @@
 #import "TGSDKViewController.h"
 #import "TGSDK.h"
 #import "SpinnerView.h"
-#import "CPADViewController.h"
 
-@interface TGSDKViewController () <UITextFieldDelegate, TGPreloadADDelegate, TGADDelegate, TGRewardVideoADDelegate, TGBannerADDelegate>
+@interface TGSDKViewController () <UITextFieldDelegate, TGPreloadADDelegate, TGADDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *sceneInput;
 @property (weak, nonatomic) SpinnerView *sceneSpinner;
@@ -46,8 +45,6 @@
                width:self.view.frame.size.width height:90 Interval:30];
     
     [TGSDK setADDelegate:self];
-    [TGSDK setRewardVideoADDelegate:self];
-    [TGSDK setBannerDelegate:self];
 
 }
 

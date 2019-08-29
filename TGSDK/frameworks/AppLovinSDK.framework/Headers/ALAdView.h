@@ -1,9 +1,9 @@
 //
 //  ALAdView.h
-//  sdk
+//  AppLovinSDK
 //
 //  Created by Basil on 3/1/12.
-//  Copyright (c) 2013, AppLovin Corporation. All rights reserved.
+//  Copyright © 2019 AppLovin Corporation. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,18 +12,12 @@
 #import "ALAdService.h"
 #import "ALAdViewEventDelegate.h"
 
-AL_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN
 
 /**
- * This protocol describes a UIView which is capable of loading and showing ads. ALAdView is its sole public concrete implementation.
- *
- * The functionality of this protocol is exposed via the concrete ALAdView class.
- * To invoke any of its methods, use that; e.g.
- *
- * ALAdView* adView = [[ALAdView alloc] initWithSize: [ALAdSize sizeBanner]];
- * [adView loadNextAd];
+ * This class represents a view-based ad - i.e. banner, mrec or leader.
  */
-@protocol ALAdViewProtocol
+@interface ALAdView : UIView
 
 /**
  * @name Ad Delegates
@@ -34,24 +28,24 @@ AL_ASSUME_NONNULL_BEGIN
  *
  *  Please note: This delegate is retained strongly and might lead to retain cycles if delegate holds strong reference to this ALAdView.
  */
-@property (strong, atomic, alnullable) id <ALAdLoadDelegate> adLoadDelegate;
+@property (nonatomic, strong, nullable) IBOutlet id<ALAdLoadDelegate> adLoadDelegate;
 
 /**
  *  An object conforming to the ALAdDisplayDelegate protocol, which, if set, will be notified of ad show/hide events.
  *
  *  Please note: This delegate is retained strongly and might lead to retain cycles if delegate holds strong reference to this ALAdView.
  */
-@property (strong, atomic, alnullable) id <ALAdDisplayDelegate> adDisplayDelegate;
+@property (nonatomic, strong, nullable) IBOutlet id<ALAdDisplayDelegate> adDisplayDelegate;
 
 /**
  *  An object conforming to the ALAdViewEventDelegate protocol, which, if set, will be notified of ALAdView-specific events.
  *
  *  Please note: This delegate is retained strongly and might lead to retain cycles if delegate holds strong reference to this ALAdView.
  */
-@property (strong, atomic, alnullable) id <ALAdViewEventDelegate> adEventDelegate;
+@property (nonatomic, strong, nullable) IBOutlet id<ALAdViewEventDelegate> adEventDelegate;
 
 // Primarily for internal use; banners and mrecs cannot contain videos.
-@property (strong, atomic, alnullable) id <ALAdVideoPlaybackDelegate> adVideoPlaybackDelegate;
+@property (nonatomic, strong, nullable) IBOutlet id<ALAdVideoPlaybackDelegate> adVideoPlaybackDelegate;
 
 /**
  * @name Ad View Configuration
@@ -60,28 +54,29 @@ AL_ASSUME_NONNULL_BEGIN
 /**
  *  The size of ads to be loaded within this ALAdView.
  */
-@property (strong, atomic) ALAdSize *adSize;
+@property (nonatomic, strong) ALAdSize *adSize;
 
 /**
  *  The zone identifier this ALAdView was initialized with and is loading ads for, if any.
  */
-@property (copy, nonatomic, readonly, alnullable) NSString *zoneIdentifier;
+@property (nonatomic, copy, readonly, nullable) NSString *zoneIdentifier;
 
 /**
  *  Whether or not this ALAdView should automatically load and rotate banners.
  *
  *  If YES, ads will be automatically loaded and updated. If NO, you are reponsible for this behavior via [ALAdView loadNextAd]. Defaults to YES.
  */
-@property (assign, atomic, getter=isAutoloadEnabled, setter=setAutoloadEnabled:) BOOL autoload;
-@property (assign, atomic, getter=isAutoloadEnabled, setter=setAutoloadEnabled:) BOOL shouldAutoload;
+@property (nonatomic, assign, getter=isAutoloadEnabled, setter=setAutoloadEnabled:) BOOL autoload;
+@property (nonatomic, assign, getter=isAutoloadEnabled, setter=setAutoloadEnabled:) BOOL shouldAutoload;
 
 /**
  * @name Loading and Rendering Ads
  */
 
 /**
- * Start loading a new advertisement. This method will return immediately. An
- * advertisement will be rendered by this view asynchonously when available.
+ * Loads AND displays an ad into the view. This method will return immediately.
+ *
+ * Please note: To load ad but not display it, use `[[ALSdk shared].adService loadNextAd: ... andNotify: ...]` then `[adView renderAd: ...]` to render it.
  */
 - (void)loadNextAd;
 
@@ -113,10 +108,10 @@ AL_ASSUME_NONNULL_BEGIN
  *
  *  @return A new instance of ALAdView.
  */
-- (instancetype)initWithSize:(ALAdSize *)size zoneIdentifier:(alnullable NSString *)zoneIdentifier;
+- (instancetype)initWithSize:(ALAdSize *)size zoneIdentifier:(nullable NSString *)zoneIdentifier;
 
 /**
- *  Initialize the ad view with a given size.
+ *  Initialize the ad view with a given sdk and size.
  *
  *  @param sdk  Instance of ALSdk to use.
  *  @param size ALAdSize representing the size of this ad. For example, [ALAdSize sizeBanner].
@@ -124,6 +119,17 @@ AL_ASSUME_NONNULL_BEGIN
  *  @return A new instance of ALAdView.
  */
 - (instancetype)initWithSdk:(ALSdk *)sdk size:(ALAdSize *)size;
+
+/**
+ *  Initialize the ad view with a given sdk, size, and zone.
+ *
+ *  @param sdk            Instance of ALSdk to use.
+ *  @param size           ALAdSize representing the size of this ad. For example, [ALAdSize sizeBanner].
+ *  @param zoneIdentifier Identifier for the zone this ALAdView should load ads for.
+ *
+ *  @return A new instance of ALAdView.
+ */
+- (instancetype)initWithSdk:(ALSdk *)sdk size:(ALAdSize *)size zoneIdentifier:(nullable NSString *)zoneIdentifier;
 
 /**
  * Initialize ad view with a given frame, ad size, and ALSdk instance.
@@ -135,25 +141,14 @@ AL_ASSUME_NONNULL_BEGIN
  * @return A new instance of ALAdView.
  */
 - (instancetype)initWithFrame:(CGRect)frame size:(ALAdSize *)size sdk:(ALSdk *)sdk;
-
-
 - (instancetype)init __attribute__((unavailable("Use one of the other provided initializers")));
 
 @end
 
-/**
- * This class represents the only public implementation of ALAdViewProtocol.
- *
- * It should be used for all ad related tasks.
- */
-@interface ALAdView : UIView <ALAdViewProtocol>
-
-@end
-
 @interface ALAdView(ALDeprecated)
-@property (strong, atomic, alnullable) UIViewController *parentController __deprecated_msg("This property is deprecated and will be removed in a future SDK version.");
-- (void)render:(ALAd *)ad overPlacement:(alnullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+@property (strong, atomic, nullable) UIViewController *parentController __deprecated_msg("This property is deprecated and will be removed in a future SDK version.");
+- (void)render:(ALAd *)ad overPlacement:(nullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
 @property (readonly, atomic, getter=isReadyForDisplay) BOOL readyForDisplay __deprecated_msg("Checking whether an ad is ready for display has been deprecated and will be removed in a future SDK version. Please use `loadNextAd` or `renderAd:` to display an ad.");
 @end
 
-AL_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END

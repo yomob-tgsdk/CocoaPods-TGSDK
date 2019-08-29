@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, UMONNativePromoShowType) {
 
 -(void)promoDidShow:(UMONNativePromoShowType)showType;
 
--(void)promoDidPurchase:(UPURTransactionDetails *)details;
+-(void)promoDidClick;
 
 -(void)promoDidClose;
 

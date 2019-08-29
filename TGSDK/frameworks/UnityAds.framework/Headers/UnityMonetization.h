@@ -10,12 +10,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UnityMonetization : NSObject
 +(void)setDelegate:(id <UnityMonetizationDelegate>)delegate;
-
 +(nullable id <UnityMonetizationDelegate>)getDelegate;
-
 +(BOOL)isReady:(NSString *)placementId;
-
 +(nullable UMONPlacementContent *)getPlacementContent:(NSString *)placementId;
+
++ (void)initialize:(NSString *)gameId
+          delegate:(nullable id<UnityMonetizationDelegate>)delegate;
+
++ (void)initialize:(NSString *)gameId
+          delegate:(nullable id<UnityMonetizationDelegate>)delegate
+          testMode:(BOOL)testMode;
 @end
 
 NS_ASSUME_NONNULL_END

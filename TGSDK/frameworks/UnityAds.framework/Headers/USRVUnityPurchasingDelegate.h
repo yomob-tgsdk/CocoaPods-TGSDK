@@ -1,14 +1,14 @@
 #import "UPURProduct.h"
 #import "UPURTransactionDetails.h"
-#import "UPURTransactionError.h"
+#import "UPURTransactionErrorDetails.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^UnityPurchasingLoadProductsCompletionHandler)(NSArray<UPURProduct*>*);
 typedef void (^UnityPurchasingTransactionCompletionHandler)(UPURTransactionDetails*);
-typedef void (^UnityPurchasingTransactionErrorHandler)(UPURTransactionError, NSException*);
+typedef void (^UnityPurchasingTransactionErrorHandler)(UPURTransactionErrorDetails *);
 
-@protocol USRVUnityPurchasingDelegate
+@protocol USRVUnityPurchasingDelegate <NSObject>
 -(void)loadProducts:(UnityPurchasingLoadProductsCompletionHandler)completionHandler;
 -(void)purchaseProduct:(NSString *)productId
      completionHandler:(UnityPurchasingTransactionCompletionHandler)completionHandler

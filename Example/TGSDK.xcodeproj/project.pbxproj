@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D5EF9012325455D4E6542C1 /* Pods_TGSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D96C6BAD114C8AAE9BCF4C /* Pods_TGSDK_Tests.framework */; };
-		2BD1D6961DA8DFA80076BE70 /* CPADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD1D6931DA8DFA80076BE70 /* CPADViewController.m */; };
 		2BD1D6971DA8DFA80076BE70 /* SpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD1D6951DA8DFA80076BE70 /* SpinnerView.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -42,8 +41,6 @@
 		08CFA21F53894E1CDD55AA7D /* Pods-TGSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TGSDK_Tests/Pods-TGSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		13686CAED3A4C77D153EA3EA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		252DA7B43AAE232DF3EE8825 /* Pods-TGSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGSDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TGSDK_Example/Pods-TGSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
-		2BD1D6921DA8DFA80076BE70 /* CPADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPADViewController.h; sourceTree = "<group>"; };
-		2BD1D6931DA8DFA80076BE70 /* CPADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPADViewController.m; sourceTree = "<group>"; };
 		2BD1D6941DA8DFA80076BE70 /* SpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerView.h; sourceTree = "<group>"; };
 		2BD1D6951DA8DFA80076BE70 /* SpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerView.m; sourceTree = "<group>"; };
 		4393E04D29BEAB91FA23C467 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -136,8 +133,6 @@
 		6003F593195388D20070C39A /* Example for TGSDK */ = {
 			isa = PBXGroup;
 			children = (
-				2BD1D6921DA8DFA80076BE70 /* CPADViewController.h */,
-				2BD1D6931DA8DFA80076BE70 /* CPADViewController.m */,
 				2BD1D6941DA8DFA80076BE70 /* SpinnerView.h */,
 				2BD1D6951DA8DFA80076BE70 /* SpinnerView.m */,
 				6003F59C195388D20070C39A /* TGSDKAppDelegate.h */,
@@ -255,7 +250,7 @@
 				ORGANIZATIONNAME = liyin;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 2MT26VE647;
+						DevelopmentTeam = 6HHA2N6ASW;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -267,6 +262,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -330,21 +326,23 @@
 				"${PODS_ROOT}/Target Support Files/Pods-TGSDK_Example/Pods-TGSDK_Example-resources.sh",
 				"${PODS_ROOT}/../../TGSDK/Assets/TGStartedIcon.png",
 				"${PODS_ROOT}/../../TGSDK/Assets/TGUnstartedIcon.png",
+				"${PODS_ROOT}/../../TGSDK/Assets/AppLovinSDKResources.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/baidumobadsdk.bundle",
+				"${PODS_ROOT}/../../TGSDK/Assets/BUAdSDK.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/SQMobileAdsSDK.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/TapjoyResources.bundle",
 				"${PODS_ROOT}/../../TGSDK/Assets/TGADSDK.bundle",
-				"${PODS_ROOT}/../../TGSDK/Assets/WMAdSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TGStartedIcon.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TGUnstartedIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/baidumobadsdk.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BUAdSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SQMobileAdsSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TapjoyResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TGADSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WMAdSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -378,7 +376,6 @@
 			files = (
 				6003F59E195388D20070C39A /* TGSDKAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* TGSDKViewController.m in Sources */,
-				2BD1D6961DA8DFA80076BE70 /* CPADViewController.m in Sources */,
 				2BD1D6971DA8DFA80076BE70 /* SpinnerView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
@@ -501,12 +498,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 2MT26VE647;
+				DEVELOPMENT_TEAM = 6HHA2N6ASW;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TGSDK/TGSDK-Prefix.pch";
 				INFOPLIST_FILE = "TGSDK/TGSDK-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.soulgame.tgsdksampleapp.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yomob.tgsdksampleapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -518,12 +515,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 2MT26VE647;
+				DEVELOPMENT_TEAM = 6HHA2N6ASW;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TGSDK/TGSDK-Prefix.pch";
 				INFOPLIST_FILE = "TGSDK/TGSDK-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.soulgame.tgsdksampleapp.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yomob.tgsdksampleapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
